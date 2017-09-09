@@ -1,11 +1,14 @@
 Name:           fs-uae
 Version:        2.8.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
 URL:            http://fs-uae.net/
 Source0:        http://fs-uae.net/fs-uae/stable/%{version}/%{name}-%{version}.tar.gz
+# Define unknown host CPU types as CPU_unknown
+# https://github.com/glaubitz/fs-uae-debian/blob/master/debian/patches/0001-define-unknown-CPUs-as-CPU_unknown.patch
+Patch0:         %{name}-2.8.3-define_unknown_CPUs.patch
 
 BuildRequires:  automake
 BuildRequires:  libpng-devel
@@ -46,7 +49,7 @@ using the cursor keys and right ctrl/alt keys).
 
 
 %prep
-%setup -q
+%autosetup -p1
 
 # Do not use bundled libmpeg2
 rm -rf libmpeg2
@@ -60,7 +63,11 @@ chmod -x src/specialmonitors.cpp
 
 
 %build
-%configure
+%ifarch %{ix86} x86_64
+  %configure
+%else
+  %configure --disable-jit
+%endif
 %make_build
 
 
@@ -102,6 +109,9 @@ fi
 
 
 %changelog
+* Sat Sep 09 2017 Andrea Musuruane <musuruan@gmail.com> - 2.8.3-2
+- Fixed FTBFS
+
 * Sat Sep 09 2017 Andrea Musuruane <musuruan@gmail.com> - 2.8.3-1
 - Updated to new upstream version
 - Improved macro usage
