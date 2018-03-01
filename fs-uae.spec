@@ -1,6 +1,6 @@
 Name:           fs-uae
 Version:        2.8.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
@@ -109,6 +109,9 @@ fi
 
 
 %changelog
+* Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 2.8.3-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Sat Sep 09 2017 Andrea Musuruane <musuruan@gmail.com> - 2.8.3-2
 - Fixed FTBFS
 
