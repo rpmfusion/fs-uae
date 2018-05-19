@@ -1,6 +1,6 @@
 Name:           fs-uae
 Version:        2.8.3
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
@@ -10,6 +10,7 @@ Source0:        http://fs-uae.net/fs-uae/stable/%{version}/%{name}-%{version}.ta
 # https://github.com/glaubitz/fs-uae-debian/blob/master/debian/patches/0001-define-unknown-CPUs-as-CPU_unknown.patch
 Patch0:         %{name}-2.8.3-define_unknown_CPUs.patch
 
+BuildRequires:  gcc-c++
 BuildRequires:  automake
 BuildRequires:  libpng-devel
 BuildRequires:  glew-devel
@@ -94,6 +95,9 @@ desktop-file-validate \
 
 
 %changelog
+* Sat May 19 2018 Andrea Musuruane <musuruan@gmail.com> - 2.8.3-5
+- Added gcc dependency
+
 * Sat May 19 2018 Andrea Musuruane <musuruan@gmail.com> - 2.8.3-4
 - Removed obsolete scriptlets
 
