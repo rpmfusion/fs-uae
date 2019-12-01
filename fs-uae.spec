@@ -1,5 +1,5 @@
 Name:           fs-uae
-Version:        3.0.0
+Version:        3.0.2
 Release:        1%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
@@ -91,6 +91,9 @@ desktop-file-validate \
 
 
 %changelog
+* Sat Nov 30 2019 Andrea Musuruane <musuruan@gmail.com> - 3.0.2-1
+- Updated to new upstream release
+
 * Mon Aug 12 2019 Andrea Musuruane <musuruan@gmail.com> - 3.0.0-1
 - Updated to new upstream release
 
