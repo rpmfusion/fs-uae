@@ -1,14 +1,11 @@
 Name:           fs-uae
-Version:        3.0.2
-Release:        2%{?dist}
+Version:        3.0.5
+Release:        1%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
 URL:            http://fs-uae.net/
 Source0:        http://fs-uae.net/stable/%{version}/%{name}-%{version}.tar.gz
-# Define unknown host CPU types as CPU_unknown
-# https://github.com/glaubitz/fs-uae-debian/blob/master/debian/patches/0001-define-unknown-CPUs-as-CPU_unknown.patch
-Patch0:         %{name}-2.8.3-define_unknown_CPUs.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  automake
@@ -91,6 +88,9 @@ desktop-file-validate \
 
 
 %changelog
+* Sat Apr 25 2020 Andrea Musuruane <musuruan@gmail.com> - 3.0.5-1
+- Updated to new upstream release
+
 * Tue Feb 04 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 3.0.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
