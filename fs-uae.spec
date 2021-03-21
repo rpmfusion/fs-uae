@@ -1,6 +1,6 @@
 Name:           fs-uae
 Version:        3.0.5
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
@@ -61,6 +61,8 @@ chmod -x src/specialmonitors.cpp
 
 
 %build
+export CFLAGS="%{optflags} -std=gnu++14 -fpermissive"
+export CXXFLAGS="%{optflags} -std=gnu++14 -fpermissive"
 %configure --disable-jit
 %make_build
 
@@ -88,6 +90,9 @@ desktop-file-validate \
 
 
 %changelog
+* Sun Mar 21 2021 Andrea Musuruane <musuruan@gmail.com> - 3.0.5-4
+- Fix FTBFS for gcc-11
+
 * Wed Feb 03 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 3.0.5-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
