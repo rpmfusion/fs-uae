@@ -1,11 +1,11 @@
 Name:           fs-uae
-Version:        3.0.5
-Release:        5%{?dist}
+Version:        3.1.66
+Release:        1%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
 URL:            http://fs-uae.net/
-Source0:        http://fs-uae.net/stable/%{version}/%{name}-%{version}.tar.gz
+Source0:        http://fs-uae.net/files/FS-UAE/Stable/%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gcc-c++
 BuildRequires:  automake
@@ -52,17 +52,11 @@ using the cursor keys and right ctrl/alt keys).
 # Do not use bundled libmpeg2
 rm -rf libmpeg2
 
-# Fix desktop file
-sed -i '/^MimeType=*/s/$/;/' \
-  share/applications/%{name}.desktop
-
 # Fix spurious executable permissions
 chmod -x src/specialmonitors.cpp
 
 
 %build
-export CFLAGS="%{optflags} -std=gnu++14 -fpermissive"
-export CXXFLAGS="%{optflags} -std=gnu++14 -fpermissive"
 %configure --disable-jit
 %make_build
 
@@ -90,6 +84,9 @@ desktop-file-validate \
 
 
 %changelog
+* Sat Dec 25 2021 Andrea Musuruane <musuruan@gmail.com> - 3.1.66-1
+- Updated to new upstream release
+
 * Mon Aug 02 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 3.0.5-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
