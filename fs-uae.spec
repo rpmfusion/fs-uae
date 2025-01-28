@@ -1,6 +1,6 @@
 Name:           fs-uae
 Version:        3.1.66
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
@@ -84,6 +84,9 @@ desktop-file-validate \
 
 
 %changelog
+* Tue Jan 28 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 3.1.66-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild
+
 * Fri Aug 02 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 3.1.66-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
 
