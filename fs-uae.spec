@@ -1,11 +1,11 @@
 Name:           fs-uae
-Version:        3.1.66
-Release:        8%{?dist}
+Version:        3.2.35
+Release:        1%{?dist}
 Summary:        Amiga emulator with on-screen GUI and online play support
 
 License:        GPLv2+
 URL:            http://fs-uae.net/
-Source0:        http://fs-uae.net/files/FS-UAE/Stable/%{version}/%{name}-%{version}.tar.xz
+Source0:        https://github.com/FrodeSolheim/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gcc-c++
 BuildRequires:  automake
@@ -17,7 +17,6 @@ BuildRequires:  SDL2-devel
 BuildRequires:  libXi-devel
 BuildRequires:  libmpeg2-devel
 BuildRequires:  zlib-devel
-BuildRequires:  freetype-devel
 BuildRequires:  zip
 BuildRequires:  gettext
 BuildRequires:  desktop-file-utils
@@ -84,6 +83,9 @@ desktop-file-validate \
 
 
 %changelog
+* Thu Sep 11 2025 Andrea Musuruane <musuruan@gmail.com> - 3.2.35-1
+- Updated to new upstream release
+
 * Sun Jul 27 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 3.1.66-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
 
