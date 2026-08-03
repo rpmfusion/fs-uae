@@ -56,6 +56,7 @@ chmod -x src/specialmonitors.cpp
 
 
 %build
+CXXFLAGS+=' -std=gnu++17'
 %configure --disable-jit
 %make_build
 
